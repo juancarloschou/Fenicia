@@ -1,0 +1,64 @@
+.heir-screen {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--sea-dark), var(--ink));
+  padding: 1rem;
+}
+
+.heir-card {
+  background: var(--parchment);
+  border: 3px solid var(--ochre);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.heir-card h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.heir-farewell {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.heir-portrait {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+.traits-list,
+.relic-gained {
+  text-align: left;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: var(--sand);
+  border-radius: 8px;
+}
+
+.traits-list h3,
+.relic-gained h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.trait-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.btn-continue {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  margin-top: 1rem;
+  font-size: 1rem;
+}

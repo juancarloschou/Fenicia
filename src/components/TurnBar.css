@@ -1,0 +1,50 @@
+.turn-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--parchment);
+  flex-shrink: 0;
+}
+
+.turn-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 2px;
+}
+
+.turn-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-end-turn {
+  background: var(--gold);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 0.5rem 1.2rem;
+}
+
+.btn-advance {
+  background: var(--sea);
+  color: white;
+  font-size: 0.85rem;
+}
+
+.turn-meta {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-small {
+  min-height: 36px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  background: transparent;
+  color: var(--sand);
+  border: 1px solid var(--sand);
+}

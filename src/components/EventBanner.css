@@ -1,0 +1,16 @@
+.event-banner {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.event-banner.warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.event-banner.active {
+  background: #cce5ff;
+  color: #004085;
+}

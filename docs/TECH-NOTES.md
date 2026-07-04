@@ -149,7 +149,7 @@ function advanceToNextEvent(state):
 | **Next.js static export** | Familiar if you've used it | Heavier for pure client game |
 | **Phaser.js** | Game loops, sprites | Overkill for UI-heavy trade game |
 
-**Recommendation:** Vite + React + TypeScript. Fenicia is 90% UI, 10% simulation.
+**Recommendation:** Vite + React + TypeScript (implemented). Fenicia is 90% UI, 10% simulation.
 
 ---
 

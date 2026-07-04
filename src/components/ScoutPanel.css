@@ -1,0 +1,25 @@
+.scout-panel {
+  padding: 0.75rem 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.scout-panel h3 {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.scout-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.scout-btn {
+  min-height: 36px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  background: var(--sea);
+  color: white;
+}

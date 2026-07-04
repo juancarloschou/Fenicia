@@ -1,0 +1,298 @@
+.map-view {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #1a3344;
+  /* Visible scrollbars on desktop */
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  scrollbar-width: thin;
+}
+
+.map-view::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.map-view::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+/* Map canvas — at least fills viewport, can grow for detail */
+.map-stage {
+  position: relative;
+  width: max(100%, 520px);
+  aspect-ratio: 1004 / 528;
+  min-height: 280px;
+}
+
+.med-map-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.map-fog {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(26, 51, 68, 0.92) 30%,
+    rgba(26, 51, 68, 0.6) 60%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.route-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.route-lines line.route-safe {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 3;
+  stroke-dasharray: 10 8;
+}
+
+.route-lines line.route-danger {
+  stroke: rgba(180, 60, 60, 0.35);
+  stroke-width: 4;
+  stroke-dasharray: 8 6;
+}
+
+.route-lines line.route-danger-glow {
+  stroke: rgba(220, 80, 80, 0.25);
+  stroke-width: 6;
+  stroke-dasharray: 12 8;
+  animation: route-pulse 2s ease-in-out infinite;
+}
+
+@keyframes route-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.port-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.port-marker.selected {
+  z-index: 20;
+}
+
+.port-hit {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  min-height: 52px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.port-hit:active {
+  transform: none;
+  opacity: 1;
+}
+
+.port-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.port-hit:hover .port-ring {
+  border-color: rgba(212, 160, 23, 0.5);
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.3);
+}
+
+.port-hit.selected .port-ring {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.45), 0 0 16px rgba(212, 160, 23, 0.5);
+  animation: port-pulse 1.5s ease-in-out infinite;
+}
+
+.port-marker.home .port-hit.selected .port-ring {
+  border-color: #fff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4), 0 0 16px rgba(212, 160, 23, 0.6);
+}
+
+@keyframes port-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.port-label {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--parchment);
+  background: rgba(44, 36, 22, 0.85);
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  pointer-events: none;
+  letter-spacing: 0.05em;
+}
+
+.port-ship-list {
+  display: flex;
+  gap: 4px;
+  margin-top: 28px;
+}
+
+.docked-ship {
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--sea);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.docked-ship:active {
+  transform: none;
+}
+
+.docked-ship.active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.55);
+}
+
+.docked-ship.damaged {
+  border-color: var(--danger);
+  animation: pulse-damaged 1.5s infinite;
+}
+
+@keyframes pulse-damaged {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.ship-token {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  pointer-events: none;
+  transition: left 0.4s ease, top 0.4s ease;
+}
+
+.ship-emoji {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+  line-height: 1;
+}
+
+.ship-name-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: rgba(44, 36, 22, 0.85);
+  color: var(--parchment);
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--gold);
+  white-space: nowrap;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ship-token.at-risk .ship-emoji {
+  filter: drop-shadow(0 0 8px rgba(220, 80, 80, 0.9)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.ship-eta {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.ship-token.damaged .ship-emoji {
+  animation: bob 1s infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (min-width: 768px) {
+  .map-stage {
+    width: max(100%, 640px);
+    min-height: 320px;
+  }
+
+  .port-hit {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+  }
+
+  .docked-ship {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.5rem;
+  }
+
+  .ship-emoji {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-stage {
+    width: max(140%, 480px);
+  }
+}

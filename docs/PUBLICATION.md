@@ -6,7 +6,7 @@ Google Play now requires ~20 testers for 14 days for new developer accounts — 
 
 ### Primary: itch.io
 
-1. Build as **HTML5** (static export from Next.js or plain React/Vite)
+1. Build as **HTML5** (static export from Vite + React — `npm run build` → `dist/` zip)
 2. Create itch.io project → Kind: **HTML**
 3. Upload `.zip` of build output
 4. Check "This file will be played in the browser"
@@ -36,25 +36,24 @@ Requires some SDK integration for ads — do after itch.io validates fun.
 
 ---
 
-## Exporting from Next.js
+## Exporting from Vite
 
 ### Single-player (no backend) — Recommended for Fenicia
 
-```js
-// next.config.js
-module.exports = { output: 'export' }
+```ts
+// vite.config.ts
+export default defineConfig({
+  base: './',  // required for itch.io relative paths
+})
 ```
 
 ```bash
 npm run build
-# Output in /out → zip contents → upload to itch.io
+# Output in /dist → zip contents → upload to itch.io
+cd dist && zip -r ../fenicia-v1.zip .
 ```
 
 Save game via `localStorage` — no server needed.
-
-### If Backend Required (not for Fenicia MVP)
-
-Host server separately; itch.io upload is a single `index.html` iframe pointing to your URL.
 
 ---
 

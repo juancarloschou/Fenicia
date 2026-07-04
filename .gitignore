@@ -1,0 +1,5 @@
+node_modules
+dist
+*.local
+.DS_Store
+fenicia-v1.zip

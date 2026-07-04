@@ -1,0 +1,8 @@
+[
+  { "id": "grain", "name": "Grain", "category": "basic", "basePrice": 4, "icon": "🌾" },
+  { "id": "wood", "name": "Wood", "category": "basic", "basePrice": 6, "icon": "🪵" },
+  { "id": "pottery", "name": "Pottery", "category": "manufactured", "basePrice": 12, "icon": "🏺" },
+  { "id": "wine", "name": "Wine", "category": "manufactured", "basePrice": 18, "icon": "🍷" },
+  { "id": "copper", "name": "Copper", "category": "raw", "basePrice": 25, "icon": "🟤" },
+  { "id": "dye", "name": "Purple Dye", "category": "luxury", "basePrice": 90, "icon": "💜" }
+]

@@ -1,0 +1,12 @@
+[
+  { "from": "tyre", "to": "byblos", "turns": 2, "dangerous": false },
+  { "from": "tyre", "to": "cyprus", "turns": 3, "dangerous": false },
+  { "from": "tyre", "to": "crete", "turns": 5, "dangerous": false },
+  { "from": "tyre", "to": "rhodes", "turns": 4, "dangerous": false },
+  { "from": "tyre", "to": "carthage", "turns": 8, "dangerous": true },
+  { "from": "byblos", "to": "cyprus", "turns": 2, "dangerous": false },
+  { "from": "cyprus", "to": "crete", "turns": 4, "dangerous": false },
+  { "from": "cyprus", "to": "rhodes", "turns": 3, "dangerous": false },
+  { "from": "rhodes", "to": "crete", "turns": 3, "dangerous": false },
+  { "from": "crete", "to": "carthage", "turns": 6, "dangerous": true }
+]

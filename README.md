@@ -1,20 +1,38 @@
 # Fenicia
 
-Game of commerce HTML5 — **Merchant Kings: Mediterranean**
+**Merchant Kings: Mediterranean** — turn-based Phoenician trading strategy for browser and mobile.
 
-A turn-based Phoenician trading strategy game for browser and mobile (itch.io).
+## Play locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:5173
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Development server |
+| `npm run build` | Production build → `dist/` |
+| `npm run zip` | Build + zip for itch.io → `fenicia-v1.zip` |
+| `npm test` | Run Vitest unit tests |
+| `npm run simulate` | Economy balance simulation |
+
+## Publish
+
+1. `npm run zip`
+2. Upload `fenicia-v1.zip` to [itch.io](https://itch.io) as HTML project
+3. Or deploy `dist/` to Vercel / GitHub Pages
+
+See [docs/PUBLICATION.md](./docs/PUBLICATION.md) and [docs/ITCH-PAGE.md](./docs/ITCH-PAGE.md).
 
 ## Documentation
 
-Design docs live in [`docs/`](./docs/README.md):
-
-- [Concept](./docs/CONCEPT.md) — vision, pitch, and design pillars
-- [GDD MVP](./docs/GDD-MVP.md) — full game design document
-- [Design Notes](./docs/DESIGN-NOTES.md) — evaluation and refinements
-- [Roadmap](./docs/ROADMAP.md) — post-launch features (v2–v4)
-- [Publication](./docs/PUBLICATION.md) — distribution strategy
-- [Tech Notes](./docs/TECH-NOTES.md) — implementation hints
+Design docs in [`docs/`](./docs/README.md).
 
 ## Status
 
-Design phase — no code yet.
+MVP implemented — 6 ports, economy, ships, pirates, events, dynasty, scoring, save/load.

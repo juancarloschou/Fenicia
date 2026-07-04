@@ -1,0 +1,74 @@
+[
+  {
+    "id": "tyre",
+    "name": "Tyre",
+    "isHome": true,
+    "startUnlocked": true,
+    "scoutCost": 0,
+    "x": 0.79,
+    "y": 0.425,
+    "produces": ["dye", "pottery"],
+    "demands": ["grain", "wood"],
+    "adjacent": ["byblos", "cyprus", "rhodes"]
+  },
+  {
+    "id": "byblos",
+    "name": "Byblos",
+    "isHome": false,
+    "startUnlocked": true,
+    "scoutCost": 0,
+    "x": 0.769,
+    "y": 0.325,
+    "produces": ["wood", "wine"],
+    "demands": ["copper", "pottery"],
+    "adjacent": ["tyre", "cyprus"]
+  },
+  {
+    "id": "cyprus",
+    "name": "Cyprus",
+    "isHome": false,
+    "startUnlocked": false,
+    "scoutCost": 150,
+    "x": 0.609,
+    "y": 0.445,
+    "produces": ["copper"],
+    "demands": ["grain", "wine"],
+    "adjacent": ["tyre", "byblos", "rhodes", "crete"]
+  },
+  {
+    "id": "rhodes",
+    "name": "Rhodes",
+    "isHome": false,
+    "startUnlocked": false,
+    "scoutCost": 250,
+    "x": 0.55,
+    "y": 0.535,
+    "produces": ["pottery", "grain"],
+    "demands": ["dye", "copper"],
+    "adjacent": ["tyre", "cyprus", "crete"]
+  },
+  {
+    "id": "crete",
+    "name": "Crete",
+    "isHome": false,
+    "startUnlocked": false,
+    "scoutCost": 300,
+    "x": 0.456,
+    "y": 0.665,
+    "produces": ["wine", "pottery"],
+    "demands": ["copper", "dye"],
+    "adjacent": ["cyprus", "rhodes", "carthage"]
+  },
+  {
+    "id": "carthage",
+    "name": "Carthage",
+    "isHome": false,
+    "startUnlocked": false,
+    "scoutCost": 400,
+    "x": 0.194,
+    "y": 0.53,
+    "produces": ["grain"],
+    "demands": ["wood", "pottery"],
+    "adjacent": ["crete"]
+  }
+]

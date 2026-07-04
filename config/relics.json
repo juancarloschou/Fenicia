@@ -1,0 +1,7 @@
+[
+  { "id": "ring", "name": "Grandfather's Ring", "description": "+5% cargo capacity", "effect": { "capacityBonus": 0.05 } },
+  { "id": "ledger", "name": "Tyrian Ledger", "description": "-5% buy prices", "effect": { "buyDiscount": 0.05 } },
+  { "id": "compass", "name": "Blessed Compass", "description": "+5% flee success", "effect": { "fleeBonus": 0.05 } },
+  { "id": "amulet", "name": "Merchant's Amulet", "description": "+5% sell prices", "effect": { "sellBonus": 0.05 } },
+  { "id": "seal", "name": "Family Seal", "description": "-5% repair costs", "effect": { "repairDiscount": 0.05 } }
+]

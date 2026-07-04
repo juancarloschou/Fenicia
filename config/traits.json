@@ -1,0 +1,10 @@
+[
+  { "id": "negotiator", "name": "Negotiator", "description": "-10% buy prices at all ports", "effect": { "buyDiscount": 0.1 } },
+  { "id": "navigator", "name": "Navigator", "description": "+15% ship speed", "effect": { "speedBonus": 0.15 } },
+  { "id": "builder", "name": "Builder", "description": "-20% colony costs (future)", "effect": { "colonyDiscount": 0.2 } },
+  { "id": "explorer", "name": "Explorer", "description": "Real-time prices for one distant port", "effect": { "realtimePort": true } },
+  { "id": "cautious", "name": "Cautious", "description": "-30% pirate encounter chance", "effect": { "pirateReduction": 0.3 } },
+  { "id": "ambitious", "name": "Ambitious", "description": "+20% gold from Festival events", "effect": { "festivalBonus": 0.2 } },
+  { "id": "thrifty", "name": "Thrifty", "description": "-15% ship upgrade costs", "effect": { "upgradeDiscount": 0.15 } },
+  { "id": "bold", "name": "Bold", "description": "+25% success fighting pirates", "effect": { "fightBonus": 0.25 } }
+]

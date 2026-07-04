@@ -1,0 +1,51 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.pirate-modal {
+  background: var(--parchment);
+  border: 3px solid var(--danger);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.pirate-modal h2 {
+  margin-bottom: 0.75rem;
+  color: var(--danger);
+}
+
+.pirate-modal p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.pirate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-bribe {
+  background: var(--ochre);
+  color: var(--ink);
+}
+
+.btn-flee {
+  background: var(--sea);
+  color: white;
+}
+
+.btn-fight {
+  background: var(--danger);
+  color: white;
+}

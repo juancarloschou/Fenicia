@@ -148,16 +148,31 @@ stock_actual += (stock_target - stock_actual) × regen_rate
 
 Each city **produces** 2 goods (high stock_target, high regen → prices tend low) and **demands** 2 goods (low stock_target → prices tend high). Natural trade routes emerge without tutorial.
 
-### 4.4 Market Information (Delayed Prices)
+### 4.4 Port Discovery & Market Information
 
-**Default:** Player sees prices at all **known** ports, but with **delay**:
+**Port discovery (gradual unlock):**
+- **Start:** Tyre (home) + Byblos only — other ports hidden on map
+- **Visit unlock:** First arrival at a port reveals it and unlocks adjacent ports on the map
+- **Scout unlock:** Pay gold from Tyre to reveal a distant port early ("Send scout")
+- **Unlock order:** Byblos (start) → Cyprus → Rhodes → Crete → Carthage
+
+| Port | Scout cost (gold) |
+|------|-------------------|
+| Cyprus | 150 |
+| Rhodes | 250 |
+| Crete | 300 |
+| Carthage | 400 |
+
+**Starting gold:** 300 (enough for one small Tyre↔Byblos cargo run).
+
+**Delayed prices (known ports only):**
 - Nearby ports (≤3 turns): prices from **1 turn ago**
 - Medium distance (4–5 turns): **2 turns ago**
 - Far ports (6+ turns, e.g. Carthage): **3 turns ago**
 
-This makes long voyages strategic (predict trends) rather than blind gambling.
+Unknown ports show no prices until discovered. This makes long voyages strategic (predict trends) rather than blind gambling.
 
-**Explorer trait:** One distant port shows **real-time** prices (spy network fantasy).
+**Explorer trait:** One known distant port shows **real-time** prices (spy network fantasy).
 
 ---
 
